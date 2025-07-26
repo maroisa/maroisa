@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --default-font-family: "SUSE";
+}
+
+html, body, #root {
+    @apply size-full;
+}
+
+@layer base {
+    h1 {
+        @apply text-6xl font-bold;
+    }
+}
+
+@utility screen {
+    @apply w-screen h-screen;
+}

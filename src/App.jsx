@@ -1,0 +1,40 @@
+import { createSignal, onMount } from "solid-js";
+import FrontPage from "./components/FrontPage.jsx";
+import AboutPage from "./components/AboutPage.jsx";
+import ProjectPage from "./components/ProjectPage.jsx";
+
+export default function App() {
+    let mainContainer;
+    let currentPage = 0;
+
+    const [currentBg, setCurrentBg] = createSignal("bg-gray-700");
+
+    const bgColors = [
+        "bg-gray-700",
+        "bg-gray-800",
+        "bg-gray-900",
+    ];
+
+    function dynamicBg() {
+        let newCurrentPage = Math.round(window.scrollY / window.innerHeight);
+        if (currentPage == newCurrentPage) return;
+        currentPage = newCurrentPage;
+        setCurrentBg(bgColors[newCurrentPage]);
+    }
+
+    onMount(() => {
+        dynamicBg();
+        window.addEventListener("scroll", dynamicBg);
+    });
+
+    return (
+        <main
+            class={`text-sky-100 w-screen h-[300vh] overflow-y-auto transition-colors ${currentBg()}`}
+            ref={mainContainer}
+        >
+            <FrontPage />
+            <AboutPage />
+            <ProjectPage />
+        </main>
+    );
+}
