@@ -16,7 +16,7 @@ export default function App() {
     ];
 
     function dynamicBg() {
-        let newCurrentPage = Math.round(window.scrollY / window.innerHeight);
+        const newCurrentPage = Math.round(window.scrollY / window.innerHeight);
         if (currentPage == newCurrentPage) return;
         currentPage = newCurrentPage;
         setCurrentBg(bgColors[newCurrentPage]);
@@ -29,7 +29,7 @@ export default function App() {
 
     return (
         <main
-            class={`text-sky-100 w-screen h-[300vh] overflow-y-auto transition-colors ${currentBg()}`}
+            class={`text-sky-100 w-screen h-[300vh] overflow-y-auto transition-colors duration-500 ${currentBg()}`}
             ref={mainContainer}
         >
             <FrontPage />
