@@ -8,14 +8,14 @@ export default function Footer() {
                 href={href}
             >
                 {icon}
-                <span class="text-xl">{label}</span>
+                <span class="text-md md:text-xl">{label}</span>
             </a>
         );
     }
 
     return (
-        <div class="w-screen bg-gray-800">
-            <nav class="flex justify-center gap-12">
+        <div class="w-full bg-gray-800">
+            <nav class="flex justify-center gap-2 md:gap-4 md:gap-12">
                 <FooterItem
                     href="https://instagram.com/maroiisa"
                     label="maroiisa"

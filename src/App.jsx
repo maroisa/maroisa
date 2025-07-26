@@ -30,7 +30,7 @@ export default function App() {
 
     return (
         <main
-            class={` text-sky-100 w-screen transition-colors duration-500 ${currentBg()}`}
+            class={` text-sky-100 overflow-x-hidden w-screen transition-colors duration-500 ${currentBg()}`}
             ref={mainContainer}
         >
             <FrontPage />
