@@ -2,6 +2,7 @@ import { createSignal, onMount } from "solid-js";
 import FrontPage from "./components/FrontPage.jsx";
 import AboutPage from "./components/AboutPage.jsx";
 import ProjectPage from "./components/ProjectPage.jsx";
+import Footer from "./components/Footer.jsx";
 
 export default function App() {
     let mainContainer;
@@ -29,12 +30,13 @@ export default function App() {
 
     return (
         <main
-            class={`text-sky-100 w-screen h-[300vh] overflow-y-auto transition-colors duration-500 ${currentBg()}`}
+            class={` text-sky-100 w-screen transition-colors duration-500 ${currentBg()}`}
             ref={mainContainer}
         >
             <FrontPage />
             <AboutPage />
             <ProjectPage />
+            <Footer />
         </main>
     );
 }

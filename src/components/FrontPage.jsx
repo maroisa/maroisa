@@ -1,6 +1,6 @@
 export default function FrontPage() {
     return (
-        <div class="screen max-w-4xl flex justify-between items-center m-auto">
+        <div class="h-screen w-full max-w-6xl m-auto flex justify-between items-center">
             <div>
                 <h1>Ahmad Roisul</h1>
                 <p class="text-2xl">
